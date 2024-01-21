@@ -32,31 +32,26 @@ def loadList():
 window = tk.Tk()
 window.title("To-Do List")
 window.geometry("300x400")
+window.configure(bg="gray")  # Set the background color of the window to gray
 
 frame_tasks = tk.Frame(window)
 frame_tasks.pack()
 
-listbox = tk.Listbox(frame_tasks, height=15, width=25)
+listbox = tk.Listbox(frame_tasks, height=15, width=25, font=("Helvetica", 12), justify=tk.CENTER, bg="gray", fg="black")
 listbox.pack(side=tk.LEFT)
 
-scrollbar_tasks = tk.Scrollbar(frame_tasks)
+scrollbar_tasks = tk.Scrollbar(frame_tasks, bg="gray")
 scrollbar_tasks.pack(side=tk.RIGHT, fill=tk.Y)
 
 listbox.config(yscrollcommand=scrollbar_tasks.set)
 scrollbar_tasks.config(command=listbox.yview)
 
-entry = tk.Entry(window, width=25)
+entry = tk.Entry(window, width=20, font=("Helvetica", 12), justify=tk.CENTER, bg="gray", fg="black")
 entry.pack()
 
-button_add_task = tk.Button(window, text="Add task", width=25, command=addTask)
+button_add_task = tk.Button(window, text="Adicionar Tarefa", width=25, command=addTask, bg="gray", fg="black")
 button_add_task.pack()
-button_del_task = tk.Button(window, text="Delete task", width=25, command=delTask)
+button_del_task = tk.Button(window, text="Deletar Tarefa", width=25, command=delTask, bg="gray", fg="black")
 button_del_task.pack()
-button_save_list = tk.Button(window, text="Save list", width=25, command=saveList)
-button_save_list.pack()
-button_load_list = tk.Button(window, text="Load list", width=25, command=loadList)
-button_load_list.pack()
 
 window.mainloop()
-
-
