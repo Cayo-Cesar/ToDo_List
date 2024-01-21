@@ -17,7 +17,7 @@ def delTask():
 
 window = tk.Tk()
 window.title("To-Do List")
-window.iconbitmap('check.ico')
+window.iconbitmap(r'C:\Users\Cayo Cesar\Documents\GitHub\ToDo_List\check.ico')
 window.geometry("500x400")
 window.configure(bg="gray")  # Set the background color of the window to gray
 
